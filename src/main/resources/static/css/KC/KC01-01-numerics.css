@@ -1,37 +1,9 @@
-div.header01{
+div.headerControl{
 	position: absolute;
-	left: 10px;
+	left: 20px;
 	width: 30px;
 	color: #330000;
 	text-align: center;
-}
-div.numeric70{
-	color: #000000;
-	width: 70px;
-	height: 20px;
-	text-align: center;
-}
-div.name100{
-	color: #000000;
-	width: 100px;
-	height: 20px;
-	text-align: center;
-}
-div.eu100{
-	color: #000F00;
-	width: 100px;
-	height: 20px;
-	text-align: center;
-}
-div.offscan{
-    animation:blinkingText 1.2s infinite;
-}
-@keyframes blinkingText{
-    0%{     color: #F00;    }
-    49%{    color: #F00; }
-    60%{    color: transparent; }
-    99%{    color:transparent;  }
-    100%{   color: #F00;    }
 }
 
 /* TAGS */

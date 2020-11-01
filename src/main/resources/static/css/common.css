@@ -1,0 +1,35 @@
+div.offscan{
+    animation:blinkingText 1.2s infinite;
+}
+@keyframes blinkingText{
+    0%{color: #F00;}
+    49%{color: #F00;}
+    60%{color: transparent;}
+    99%{color:transparent;}
+    100%{color: #F00;}
+}
+
+div.autoUpdateCheckbox{
+    position: absolute;
+    left: 24;
+    top: 65;
+}
+
+div.numeric70{
+	color: #000000;
+	width: 70px;
+	height: 20px;
+	text-align: center;
+}
+div.name100{
+	color: #000000;
+	width: 100px;
+	height: 20px;
+	text-align: center;
+}
+div.eu100{
+	color: #000F00;
+	width: 100px;
+	height: 20px;
+	text-align: center;
+}

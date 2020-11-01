@@ -1,5 +1,6 @@
 jQuery(document).ready(function(){
-
+let isAutoUpdateSet = true;
+let isAutoUpdateCheckboxSet = document.querySelector('input[value="autoUpdate"]');
 let refreshPeriodInSeconds = 3;
 
 //Stop autorefresh after certain time and reload page
@@ -13,21 +14,34 @@ var rebootLoop = setInterval(rebootLoopFunction, maxTimeBeforeAutorefreshInMinut
 
 
 let mainLoopFunction = function() {
-    //TODO: Update all tags depending on the tag name
-    var seconds = ((new Date().getTime() / 1000) % 60).toFixed(2);
+    if (isAutoUpdateSet === true){
+        //TODO: Update all tags depending on the tag name
+        var seconds = ((new Date().getTime() / 1000) % 60).toFixed(2);
 
-    let i = 1;
-    for(var item of allActiveTags) {
-        var tag = $("."+item.classList[0]);
-        let value = parseFloat(seconds) + i;
-                if (value != ''){
-                    tag.removeClass('offscan');
-                }
-        tag.html(value.toString().substring(0,5)); //Float values sometimes have long fraction
-        console.log('Update [' + item.classList[0] + '] with ['+ tag.html() + ']' + '. NOTE: float value = ' + value);
-        i++;
+        let i = 1;
+        for(var item of allActiveTags) {
+            var tag = $("."+item.classList[0]);
+            let value = parseFloat(seconds) + i;
+                    if (value != ''){
+                        tag.removeClass('offscan');
+                    }
+            tag.html(value.toString().substring(0,5)); //Float values sometimes have long fraction
+            console.log('Update [' + item.classList[0] + '] with ['+ tag.html() + ']' + '. NOTE: float value = ' + value);
+            i++;
+        }
+    } else {
+        for(var item of allActiveTags) {
+                    var tag = $("."+item.classList[0]);
+                    tag.addClass('offscan');
+                    tag.html("NaN");
+        }
     }
 }
+
+isAutoUpdateCheckboxSet.addEventListener('change', () => {
+    isAutoUpdateSet = isAutoUpdateCheckboxSet.checked;
+    console.log("isAutoUpdateSet = " + isAutoUpdateSet);
+});
 
 //Collect all dynamic tags
 let allActiveTags = $(".active");
