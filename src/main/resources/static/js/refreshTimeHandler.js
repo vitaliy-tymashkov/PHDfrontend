@@ -1,5 +1,5 @@
 $(function(){
-let restApiUrl = 'http://worldtimeapi.org/api/timezone/Europe/Warsaw';
+let restApiUrl = 'https://worldtimeapi.org/api/timezone/Europe/Warsaw';
 
 $(".refreshButton").click(function(){
     $.get(restApiUrl, function(data) {
