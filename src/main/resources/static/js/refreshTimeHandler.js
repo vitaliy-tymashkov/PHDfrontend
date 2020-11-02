@@ -11,4 +11,12 @@ $(".refreshButton").click(function(){
         console.log('Update [valTime] with ['+ dateTime +']')
         });
 	});
+
+$(".trendK1_TT0221PV").click(function(){
+    let url = 'chart01.html';
+    console.log('Call chart01.html');
+    var win = window.open(url, '_blank');
+    win.focus();
+});
+
 });
