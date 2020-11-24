@@ -8,5 +8,6 @@ You may find in console some logs of execution of javascript.
 * TT0220.PV and TT0221.PV tags are updated based on current time seconds (but due to float has a long fraction sometimes - output value is cut to 4 chars). Also each value is incremented with index of this tag.
 
 Use link to open diagram KC01-01.html.
+https://vitaliy-tymashkov.github.io/PHDfrontend/
 
  
